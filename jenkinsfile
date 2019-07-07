@@ -9,28 +9,28 @@ pipeline {
     {
         stage ('Compile Stage') {
             steps {
-                withMaven(maven : 'LocalMaven') {
+                withMaven(maven : 'LocalMAVEN') {
                     sh 'mvn clean compile'
                 }
             }
         }
         stage ('Test Stage') {
            steps {
-               withMaven(maven : 'LocalMaven') {
+               withMaven(maven : 'LocalMAVEN') {
                     sh 'mvn clean test'
                }
            }
         }
         stage ('Package Stage') {
            steps {
-               withMaven(maven : 'LocalMaven') {
+               withMaven(maven : 'LocalMAVEN') {
                     sh 'mvn clean package'
                }
            }
         }
         stage ('Install Stage') {
            steps {
-               withMaven(maven : 'LocalMaven') {
+               withMaven(maven : 'LocalMAVEN') {
                     sh 'mvn clean install'
 }
 }
